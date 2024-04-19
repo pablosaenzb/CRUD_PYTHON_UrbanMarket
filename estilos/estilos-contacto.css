@@ -1,0 +1,391 @@
+ 
+  .feedback{
+    display:grid;
+    align-content:center;
+    text-align: center;
+   /* background-color:darkgreen;*/
+    width:80%;
+    
+  }
+  .feedback div{
+    align-content: center;
+  }
+  
+  .cliente1{
+       display:flex;
+       width:90vw;
+       height:33vh;
+       background-color:blue;
+       background-color: #fff;
+                         border: 2px solid #DE7D39;
+                         
+                         border-radius: 15px;
+       
+   }
+   .cliente2{
+       display:flex;
+       width:90vw;
+       height:33vh;
+       background-color:aqua;
+       background-color: #fff;
+       border: 2px solid #DE7D39;
+       
+       border-radius: 15px;
+   }
+   .contenedorFotoYNombre{
+        display: grid;
+        justify-items:center;
+       width:250px;
+       height:34vh;
+       
+   }
+   .foto{
+       display:grid;
+       justify-items:center;
+       align-content:center;
+       width: 150px;
+       height:150px;
+       background-color: white;
+   }
+   .nombre{
+       width:auto;
+       height:12vh;
+       background-color:chartreuse;
+   }
+
+.tarjeta {
+    float: left;
+    border: 1px solid #555;
+    border-radius: 10px;
+    margin:4px; padding: 2px;
+    width:250px;
+    height:240px;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+
+/*hasta aca todas cosas agregadas  para la seccion clietnes */
+.contenedor_global {
+    display: grid;
+    justify-items:center;
+    
+   
+    
+    grid-template: 0.5fr 0.5 2fr 1fr 1fr / auto auto auto; /*6 filas / 3 columnas */
+    grid-template-areas: "header header header" 
+                         "contacto contacto contacto"
+                         "form form form"
+                         "clientes clientes clientes"
+                         "mapa mapa mapa" 
+                         "footer footer footer";
+
+
+    gap: 1px;
+   
+}
+
+.header    {    grid-area: header;width:100vw;}
+.contenedor_contacto   { grid-area: contacto; padding-top: 20px;padding-bottom: 30px;width:100vw;}
+.contenedor_formulario   { grid-area: form;width:90vw;padding-bottom: 6vh;}  
+.contenedor_clientes  { grid-area: clientes;
+    display:grid;
+    justify-items:center;
+    align-items: center;
+    width:100vw;
+    height:99vh;
+
+ /*   background-color: brown;*/
+}  
+.mapa {grid-area: mapa; width:100vw;}
+.footer    { grid-area: footer; width:100vw;}
+/* CONTACTO */
+.contenedor_clientes img {
+    width:100px;
+    object-fit: cover;
+    height:100px;
+    border-radius: 15px;
+
+}
+
+.formulario {
+    display: grid;
+    padding: 5vh;
+    width:100%; 
+    row-gap: 5vh;
+    
+    
+    justify-content:space-evenly;
+    
+   /* background-color: bisque;*/
+    grid-template: 0.3fr 0.3fr 0.3fr 1fr 0.3fr 0.1fr/ auto auto auto ;
+    grid-template-areas: "nombre dni correo"
+                         "telefono tarjeta tarjeta1"
+                         "asunto asunto asunto"
+                         "textA textA textA"
+                         "botoni botonc botond"
+                        "mensaje mensaje mensaje";
+                         
+                         
+                         background-color: #fff;
+                         border: 2px solid #DE7D39;
+                         
+                         border-radius: 15px;
+   
+                
+}
+
+
+.nombreFormulario  {    grid-area: nombre;}
+.dniFormulario  {    grid-area: dni; }
+.correoFormulario  {    grid-area: correo; }
+.telefonoFormulario  {    grid-area: telefono;}
+.tarjetaFormulario  {    grid-area: tarjeta;}
+.tarjeta1Formulario  {    grid-area: tarjeta1;}
+.asuntoFormulario {    grid-area: asunto;  display:grid ; align-content:normal; justify-items:left;}
+.formulario__mensaje {
+     grid-area: mensaje;
+ }
+.textAFormulario  {    grid-area: textA; }
+label {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+select {width:45vw;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;}
+
+.campoFormW1 { 
+    width: 26vw;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;}
+
+textarea {width: 82vw;
+    height:30vh ;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;}
+
+.botoniFormulario {grid-area:botoni;}
+.botoncFormulario {grid-area:botonc; text-align: center;}
+.botondFormulario {grid-area:botond;}
+#botonSubmit {
+    background-color: #DE7D39;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 4px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+   /* width: 30px;background-color: #304E9D; color:white;*/
+
+ .formulario__grupo-input {
+     position: relative;
+ }
+
+ .formulario__input {
+     transition: .3s ease all;
+ }
+
+ .formulario__input-error {
+     font-size: 12px;
+     margin-bottom: 0px;
+     display: none;
+
+
+ }
+
+ .formulario__input-error-activo {
+     display: block;
+    font-size:12px;
+ }
+
+ .formulario__validacion-estado {
+     position: absolute;
+     right: 2vw;
+     bottom: 3vh;
+     z-index: 100;
+     font-size: 16px;
+     opacity: 0;
+ }
+
+
+ .formulario__checkbox {
+     margin-right: 10px;
+     margin-left: 15px;
+ }
+
+ .formulario__mensaje {
+     height: 45px;
+     line-height: 45px;
+     width: 100%;
+     background: #DE7D39;
+     padding: 0 15px;
+     border-radius: 3px;
+     text-align: center;
+     height: 45px;
+     line-height: 45px;
+     width: 100%;
+     background: #DE7D39;
+     padding: 0 15px;
+     border-radius: 3px;
+     text-align: center;
+     display: none;
+ }
+
+
+ .formulario__mensaje-activo {
+     display: block;
+ }
+
+ .formulario__grupo-btn-enviar {
+     text-align: center;
+ }
+
+
+ .formulario__btn {
+     cursor: pointer;
+     transition: .1s ease all;
+ }
+
+ .formulario__btn:hover {
+     box-shadow: 3px 0px 30px rgba(163, 163, 163, 1);
+ }
+
+ .formulario__mensaje-exito {
+
+     font-size: 18px;
+     font-weight: bold;
+     color: #cf6519;
+     display: none;
+ }
+
+ .formulario__mensaje-exito-activo {
+     display: block;
+ }
+
+
+ .formulario__grupo-correcto .formulario__validacion-estado {
+     color: #1ed12d;
+     opacity: 1;
+ }
+
+
+ .formulario__grupo-incorrecto textarea {
+     border: 1px solid #bb2929 ;
+ }
+
+ .formulario__grupo-incorrecto .formulario__label {
+     color: #bb2929;
+ }
+
+ .formulario__grupo-incorrecto .formulario__validacion-estado {
+     color: #bb2929;
+     opacity: 1;
+ }
+
+ .formulario__grupo-incorrecto .formulario__input {
+
+     border: 1px solid #bb2929;
+ }
+
+
+.info_contacto{
+    text-align: center; 
+}
+
+.titulo_clientes{
+    text-align: center; 
+}
+
+
+.fa-phone-square{
+    font-size: 22px;
+}
+
+.map-responsive{
+    overflow: hidden;
+    width:100%;
+    padding-bottom: 30%;
+    position: relative;
+    height: 0;  
+}   
+.map-responsive iframe {
+    left:0;
+    top: 0;
+    height: 100%;
+    width:100%;
+    /*width: 100%;*/
+    position: absolute;
+}
+
+/* CONTACTO_RESPONSIVE */
+
+
+@media (max-width:800px){
+
+    
+    .info_contacto{ text-align: center;}
+    
+    .campoFormW1 { width: 40vw;}
+    .asuntoFormulario select {width:45vw;}
+   
+    
+    
+
+   
+      
+    .formulario{
+        grid-template: 0.3fr 0.3fr 0.3fr 0.3fr 0.8fr 0.3fr 0.3fr 0.3fr 0.1fr/ auto auto ;
+        grid-template-areas: 
+        "nombre dni" 
+        "correo  telefono"
+        "tarjeta tarjeta1" 
+        "asunto asunto"
+        "textA textA"
+        "botoni botoni"
+        "botonc botonc"
+        "botond botond"
+        "mensaje mensaje";
+        
+
+    }
+    
+}
+
+
+
+
+@media (max-width:400px){
+   
+    .info_contacto{ text-align: center;}
+    
+    .campoFormW1 { width: 80vw;}
+    .asuntoFormulario select {width:80vw;}
+    .formulario{
+        grid-template: 0.3fr 0.3fr 0.3fr 0.3fr 0.8fr 0.3fr 0.3fr 2fr 0.3fr 0.3fr 0.3fr 0.1fr/ auto ;
+        grid-template-areas: 
+        "nombre"
+         "dni" 
+        "correo"
+        "telefono"
+        "tarjeta"
+        "tarjeta1" 
+        "asunto"
+        "textA "
+        "botoni"
+        "botonc"
+        "botond"
+        "mensaje";
+        
+
+    }
+}

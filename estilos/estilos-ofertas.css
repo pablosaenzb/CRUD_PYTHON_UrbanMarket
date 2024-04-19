@@ -1,0 +1,211 @@
+
+.contenedor_global {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto; 
+    grid-template-areas: "header" 
+                        "contenedor_ofertas"
+                        "contenedor_descuentos"
+                         "pagos"                         
+                         "footer";
+
+    grid-gap: 20px; 
+}
+
+.header    { grid-area: header;width:100vw;}
+.contenedor_descuentos { grid-area: contenedor_descuentos;width:100vw;}
+.pagos { grid-area: pagos;width:100vw; }
+.footer    { grid-area: footer;width:100vw;}
+
+
+/* OFERTAS */
+.contenedor_ofertas{
+    grid-area:contenedor_ofertas;
+    max-width: 100%;
+    margin:0 auto;
+    padding:3rem 2rem;
+    box-sizing: border-box;
+    
+    }
+ 
+ 
+ .contenedor_ofertas .listas_productos{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+ 
+ 
+ .contenedor_ofertas  .listas_productos .productos{
+    text-align: center;
+    padding:3rem 2rem;
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    outline: .1rem solid #ff6600;
+    outline-offset: -1rem;
+    cursor: pointer;
+ 
+ }
+ 
+ .contenedor_ofertas .listas_productos .productos:hover{
+    outline: .2rem solid #ff6600;
+    outline-offset: 0;
+ }
+ 
+ .contenedor_ofertas .listas_productos .productos img{
+    width: 13rem;
+ }
+ 
+ .contenedor_ofertas .listas_productos .productos:hover img{
+    transform: scale(.9);
+ } 
+ 
+  .boton a.carrito{
+     margin: 12px;
+    font-size: 10px; 
+    background: #304E9D;
+    color:#fff;
+    padding: 9px;
+ }
+ 
+ .boton a.carrito:hover{
+    margin: 12px;
+   font-size: 10px; 
+   background: #ff6600;
+   color:#fff;
+   padding: 9px;
+ }
+ 
+ @media screen and (max-width: 1200px) {
+    .contenedor_ofertas .listas_productos {
+       grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .contenedor_ofertas .listas_productos .productos {
+      padding: 3rem 2rem;
+    }
+  
+    .contenedor_ofertas .listas_productos .productos img {
+      width: 100%;
+    }
+  }
+ 
+  @media screen and (max-width: 850px) {
+    .contenedor_ofertas .listas_productos {
+       grid-template-columns: 1fr;
+    }
+ 
+    .contenedor_ofertas .listas_productos .productos {
+       padding: 3rem 2rem;
+    }
+ 
+    .contenedor_ofertas .listas_productos .productos img {
+       width: 100%;
+    }
+ }
+
+
+.pagos img {width:45vw;};
+
+/* DESCUENTOS */
+
+.contenedor_descuentos {
+    /* Elimina display: grid y place-content: center; */
+    max-width: 1200px;
+    margin: 20px auto; /* Esto centra el contenedor y proporciona un espacio superior de 20px */
+    /* ... (resto de tu estilo) */
+}
+
+
+.descuentos{
+  
+  width: 80%;
+  margin: auto;
+  border-radius: 20px;
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  
+
+
+}
+
+
+.descuentos img {
+   width:100%;
+   border-radius: 8px;
+}
+
+
+@media (max-width:1100px){
+    .pagos img {width:90vw;}
+   
+
+    .descuentos{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        align-items: center; 
+        margin-bottom: 50px;
+        gap: 30px;
+     }
+
+        .descuentos div{ 
+         display: grid;
+         justify-items: center;
+         align-items: center; 
+
+     }
+
+    .descuentos img {
+        width:50%;
+    }
+   
+
+}
+
+
+
+/* PAGOS */
+
+.contenedor_pagos {
+    text-align: center; 
+}
+
+.pagos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; 
+    justify-content: center; 
+}
+
+.pagos_imagenes_derecha {
+    display: flex;
+    justify-content: right; 
+
+}
+
+.pagos_imagenes_izquierda {
+    display: flex;
+    justify-content: left; 
+
+}
+
+
+@media (max-width: 1060px) {
+    .pagos img {width:90vw;}
+    .pagos {
+        grid-template-columns: 1fr; 
+    }
+
+.pagos_imagenes_izquierda {
+    display: flex;
+    justify-content: center; 
+    }
+
+    .pagos_imagenes_derecha {
+        display: flex;
+        justify-content:center; 
+    }
+
+}

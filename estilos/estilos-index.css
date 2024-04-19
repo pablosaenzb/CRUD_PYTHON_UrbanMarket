@@ -1,0 +1,271 @@
+/*ESTRUCTURA BODY*/
+.contenedor_global {
+    display: grid;
+    justify-items:center;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto; 
+    grid-template-areas:
+        "header"
+        "contenedor_slider"
+        "contenedor_ofertas"
+        "contenedor_extra"
+        "banner"
+        "pagos"
+        "footer";
+    grid-gap: 20px; 
+}
+
+.header { grid-area: header;width:100vw;}
+.contenedor_slider { grid-area: contenedor_slider; width:100vw;}
+.contenedor_ofertas { grid-area: contenedor_ofertas;width:100vw;}
+.contenedor_extra { grid-area: contenedor_extra;width:100vw; }
+.banner { grid-area: banner;width:100vw; }
+.pagos { grid-area: pagos; width:100vw;}
+.footer { grid-area: footer; width:100vw;}
+
+
+/* SLIDER */
+
+.contenedor_slider {
+    /* Elimina display: grid y place-content: center; */
+    max-width: 1250px;
+    margin: 20px auto; /* Esto centra el contenedor y proporciona un espacio superior de 20px */
+}
+.slider{
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  overflow: hidden; /* No esta funcionando porque no puedo definir tamaños porque las imagenes se ponene encima delmenu del texto y el footer */
+  border-radius: 20px;
+}
+
+.slider ul {
+    display: flex;
+    padding: 0px;
+    width: 400%;
+    animation: slide 15s infinite cubic-bezier(0.55, 0.48, 0.37, 0.92);
+    }
+
+.slider li img {
+  width: 100%; 
+  height: auto; 
+  object-fit: cover; 
+}
+
+@keyframes slide {
+    0%{margin-left:0;}
+    20%{margin-left:0;}
+
+    25%{margin-left:-100%;}
+    45%{margin-left:-100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left:-300%;}
+    100%{margin-left:-300%;}
+}
+
+/* OFERTAS */
+
+.contenedor_ofertas {
+    max-width: 1250px;
+    margin: 20px auto; 
+    
+}
+
+
+.ofertas{
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  
+
+}
+
+
+.ofertas img {
+   width:100%;
+   border-radius: 8px;
+}
+
+.ofertas_vencimiento{  
+    text-align: center;
+    padding-top: 20px;
+}
+
+@media (max-width:1100px){
+    .contenedor_extra img {width:50vw;}
+    .pagos img {width:50vw;}
+
+
+    h2{
+        padding: 8px 40px;
+        text-align: center;
+    }
+
+    .ofertas{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        align-items: center; 
+        margin-bottom: 50px;
+        gap: 30px;
+     }
+
+        .ofertas div{ 
+         display: grid;
+         justify-items: center;
+         align-items: center; 
+
+     }
+
+    .ofertas_vencimiento{
+        padding: 8px 40px;
+        text-align: center;
+    }
+    .ofertas img {
+        width:50%;
+    }
+   
+
+}
+
+/* CONTENIDO EXTRA */
+
+    .contenedor_extra {
+        text-align: center; 
+        padding-bottom: 20px;
+    }
+
+    .extras {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px; 
+        justify-content: center; 
+    }
+
+    .extra_imagenes_derecha {
+        display: flex;
+        justify-content: left; 
+
+    }
+
+    .extra_imagenes_izquierda {
+        display: flex;
+        justify-content: right; 
+
+    }
+
+
+    @media (max-width: 1060px) {
+        .contenedor_extra img {width:50vw;}
+        .pagos img {width:50vw;}
+        .extras {
+            grid-template-columns: 1fr; 
+        }
+
+    .extra_imagenes_izquierda {
+        display: flex;
+        justify-content: center; 
+        }
+
+        .extra_imagenes_derecha {
+            display: flex;
+            justify-content:center; 
+        }
+
+    }
+
+ /* BANNER */
+
+ .banner {
+    position: relative;
+    width: 85%; 
+    margin: 0 auto; 
+    background-image: url('imagenes/banner1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    justify-content: center;    
+    align-items: center;
+    margin-bottom: 3%;
+}
+
+.contenido {
+    width: 100%;
+    margin: auto;
+    padding: 30px 0;
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 10px;
+}
+
+.titulo_banner {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.boton-contactar {
+    display: inline-block;
+    padding: 20px 30px;
+    font-size: 1em;
+    text-decoration: none;
+    background-color: #ff6600; 
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.boton-contactar:hover {
+    background-color: #e05100; 
+}
+
+
+
+ /* PAGOS */
+
+.contenedor_pagos {
+    text-align: center; 
+}
+
+.pagos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; 
+    justify-content: center; 
+}
+
+.pagos_imagenes_derecha {
+    display: flex;
+    justify-content: right; 
+
+}
+
+.pagos_imagenes_izquierda {
+    display: flex;
+    justify-content: left; 
+
+}
+
+
+@media (max-width: 1060px) {
+    .contenedor_extra img {width:50vw;}
+    .pagos img {width:50vw;}
+    .pagos {
+        grid-template-columns: 1fr; 
+    }
+
+.pagos_imagenes_izquierda {
+    display: flex;
+    justify-content: center; 
+    }
+
+    .pagos_imagenes_derecha {
+        display: flex;
+        justify-content:center; 
+    }
+
+}
